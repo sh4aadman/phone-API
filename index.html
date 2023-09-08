@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone</title>
 
-    <!-- DaisyUI -->
+    <!-- Tailwind and DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Color -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D6EFD',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Style -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1 class="text-6xl">Phone API</h1>
+
+<body class="container mx-auto">
+    <header class="flex justify-between items-center my-16">
+        <h1 class="text-2xl font-bold">Hot Gadgets</h1>
+        <button class="bg-primary text-white text-xl font-bold py-4 px-9 rounded-lg">Sign Up</button>
     </header>
     <main>
+
+        <!-- Search Bar -->
         <section>
-            <section id="phone-container" class="grid grid-cols-3 gap-6">
-            
+            <h3 class="text-[#100F0F] text-center font-semibold text-4xl">Search your phone</h3>
+            <section class="flex justify-center items-center my-8">
+                <input type="text" placeholder="Search" class="input input-bordered w-full max-w-xs" />
+                <button class="btn bg-primary">Search</button>
+            </section>
+        </section>
+
+        <!-- Phone Container Section -->
+        <section>
+            <section id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
             </section>
         </section>
     </main>
@@ -27,4 +68,5 @@
 
     <script src="scripts/phone.js"></script>
 </body>
+
 </html>
