@@ -40,13 +40,28 @@ const displayPhones = (phones) => {
         `;
 
         phoneContainer.appendChild(phoneCard);
-    })
+    });
+
+    isLoading(false);
 };
 
 const searchPhone = () => {
+    isLoading(true);
+
     const searchFieldElement = document.getElementById('search-field');
-    const searchFieldValue = searchFieldElement.value;
+    const searchFieldValue = searchFieldElement.value;    
+    
     loadPhone(searchFieldValue);
 };
+
+const isLoading = (loading) => {
+    const loadingSection = document.getElementById('loading-section');
+    if (loading) {
+        loadingSection.classList.remove('hidden');
+    }
+    else {
+        loadingSection.classList.add('hidden');
+    }
+}
 
 loadPhone('iphone');
